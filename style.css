@@ -1,0 +1,47 @@
+:root {
+            --cyan: #00f2ff; --pink: #ff00ff; --red: #ff073a; --gold: #ffcc00;
+            --day-sky: #87CEEB; --night-sky: #050010;
+        }
+        body { margin: 0; overflow: hidden; background: #000; font-family: 'Orbitron', sans-serif; color: white; user-select: none; }
+        canvas { width: 100%; height: 100%; display: block; }
+
+        /* UI OVERLAYS */
+        #hud { position: absolute; inset: 0; pointer-events: none; padding: 20px; z-index: 10; }
+        .hud-top { display: flex; justify-content: space-between; text-shadow: 2px 2px 5px #000; }
+        .hearts { display: flex; gap: 5px; margin-top: 5px; }
+        .heart { 
+            width: 25px; height: 25px; background: var(--red); 
+            clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 80%, 20% 100%, 0% 35%); 
+            filter: drop-shadow(0 0 8px var(--red)); transition: 0.5s;
+        }
+        .heart.lost { opacity: 0; transform: scale(0) rotate(180deg); }
+
+        .boss-hud { position: absolute; top: 60px; left: 50%; transform: translateX(-50%); width: 60%; display: none; text-align: center; }
+        .bar-outer { width: 100%; height: 20px; background: rgba(0,0,0,0.7); border: 2px solid #fff; border-radius: 10px; overflow: hidden; }
+        #boss-hp-fill { width: 100%; height: 100%; background: linear-gradient(90deg, var(--red), var(--pink)); transition: width 0.1s; }
+
+        .player-bar { position: absolute; bottom: 30px; left: 30px; width: 300px; }
+        #player-hp-fill { height: 100%; background: linear-gradient(90deg, var(--cyan), #fff); width: 100%; transition: width 0.3s; }
+
+        #screen-msg {
+            position: absolute; inset: 0; background: rgba(0,0,0,0.9);
+            display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 100;
+        }
+        .glow-btn {
+            margin-top: 20px; padding: 15px 50px; background: transparent; border: 3px solid var(--cyan);
+            color: var(--cyan); font-weight: 900; font-size: 1.5rem; cursor: pointer; transition: 0.3s;
+            text-transform: uppercase; letter-spacing: 5px;
+        }
+        .glow-btn:hover { background: var(--cyan); color: #000; box-shadow: 0 0 50px var(--cyan); }
+        @media (max-width: 600px) {
+            #msg-text {
+            font-size: 1.5rem; /* smaller on phones */
+        }
+        #hud{
+            font-size: small;
+        }
+        #boss-name{
+            margin-top: 10px;
+        }
+    }
+

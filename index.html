@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TITAN SLAYER</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+</head>
+<body>
+<div id="screen-msg">
+    <h1 id="msg-text" style="font-size: 2rem; color: var(--gold); text-shadow: 0 0 20px var(--gold);">STAGE CLEAR</h1>
+    <button class="glow-btn" id="next-btn" onclick="nextStage()">Next Mission</button>
+    <!-- 🎵 New Save Me button -->
+    <button class="glow-btn" id="save-btn" onclick="saveMe()" style="display:none;">Save Me 30 second watch video</button>
+</div>
+
+<div id="hud">
+    <div class="hud-top">
+        <div>
+            <div style="font-size: 1.2rem;">SCORE: <span id="score">00000</span></div>
+            <div class="hearts" id="lives-box"></div>
+        </div>
+        <div style="text-align: right;">
+            <div>STAGE: <span id="stage-num">1</span>/10 | PHASE: <span id="phase">DAY</span></div>
+            <div id="timer-box">Boss ARRIVAL: <span id="timer">10:00</span></div>
+        </div>
+    </div>
+
+    <div id="boss-hud" class="boss-hud">
+        <div id="boss-name" style="color: var(--red); font-weight: 900; margin-bottom: 5px; letter-spacing: 3px;">TITAN ARCHON</div>
+        <div class="bar-outer"><div id="boss-hp-fill"></div></div>
+    </div>
+
+    <div class="player-bar">
+        <div style="font-size: 10px; margin-bottom: 5px; color: var(--cyan); font-weight: 900;"><span style="color: black;">ARMOR Attack: c x z</span></div>
+        <div class="bar-outer"><div id="player-hp-fill"></div></div>
+    </div>
+</div>
+
+<canvas id="gameCanvas"></canvas>
+<script src="script.js"></script>
+<!--<script src="script.js"></script>-->
+</body>
+</html>
